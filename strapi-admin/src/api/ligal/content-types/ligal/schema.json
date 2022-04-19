@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ligals",
+  "info": {
+    "singularName": "ligal",
+    "pluralName": "ligals",
+    "displayName": "Ligal",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Text": {
+      "type": "richtext",
+      "required": true
+    },
+    "Pages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::page.page",
+      "mappedBy": "Ligal"
+    }
+  }
+}

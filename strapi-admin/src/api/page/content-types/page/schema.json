@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Project": {
+      "type": "enumeration",
+      "enum": [
+        "credit",
+        "auto",
+        "halva"
+      ],
+      "required": true
+    },
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "Description": {
+      "type": "string",
+      "required": true
+    },
+    "Text": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::text.text",
+      "inversedBy": "Pages"
+    },
+    "Ligal": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::ligal.ligal",
+      "inversedBy": "Pages"
+    },
+    "Image": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::image.image",
+      "inversedBy": "Pages"
+    },
+    "SequenceOfComponents": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
